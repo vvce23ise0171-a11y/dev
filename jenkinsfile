@@ -1,1 +1,16 @@
-
+pipeline {
+agent any
+stages {
+stage('clone'){
+steps {
+git branch : 'main', url: https://github.com/vvce23ise0171-a11y/dev.git
+}
+}
+stage ('Run script'){
+steps {
+sh 'chmod +x script.sh'
+sh './script.sh'
+}
+}
+}
+}
